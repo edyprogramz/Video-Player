@@ -19,3 +19,11 @@ video.addEventListener("pause", () => {
 videoContainer.addEventListener("click", togglePlayPause)
 
 // keydown 
+document.addEventListener("keydown", e => {
+    switch (e.key.toLowerCase()) {
+        case " ":
+        case "p":
+            togglePlayPause()
+            break
+    }
+})
