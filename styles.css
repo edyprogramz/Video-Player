@@ -58,3 +58,9 @@
 .video-container:not(.full-screen) .full-screen-close{
     display: none;
 }
+.video-container.miniplay .mini-player{
+    display: none;
+}
+.video-container:not(.miniplay) .mini-player-close{
+    display: none;
+}

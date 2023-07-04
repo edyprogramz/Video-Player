@@ -4,6 +4,7 @@ const videoContainer = document.querySelector(".video-container");
 const playPauseBtn = document.querySelector(".play-pause-btn");
 const theaterBtn = document.querySelector(".theater-btn");
 const fullScreenBtn = document.querySelector(".full-screen-btn");
+const miniPlayerBtn = document.querySelector(".mini-player-btn");
 
 // play/ pause 
 playPauseBtn.addEventListener("click", togglePlayPause);
@@ -33,6 +34,9 @@ document.addEventListener("keydown", e => {
         case "f":
             fullscreenMode()
             break
+        case "m":
+            miniPlayerMode()
+            break
     }
 })
 
@@ -60,4 +64,24 @@ function fullscreenMode (){
 
 document.addEventListener("fullscreenchange", () => {
     videoContainer.classList.toggle("full-screen")
+})
+
+
+// Mini-Player
+miniPlayerBtn.addEventListener("click", miniPlayerMode)
+
+function miniPlayerMode(){
+    if(videoContainer.classList.contains("miniplay")){
+        document.exitPictureInPicture()
+    } else {
+        video.requestPictureInPicture()
+    }
+}
+
+video.addEventListener("enterpictureinpicture", () => {
+    videoContainer.classList.add("miniplay")
+})
+
+video.addEventListener("leavepictureinpicture", () => {
+    videoContainer.classList.remove("miniplay")
 })
