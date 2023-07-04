@@ -2,6 +2,7 @@ const video = document.querySelector("video");
 const videoContainer = document.querySelector(".video-container");
 
 const playPauseBtn = document.querySelector(".play-pause-btn");
+const theaterBtn = document.querySelector(".theater-btn");
 
 // play/ pause 
 playPauseBtn.addEventListener("click", togglePlayPause);
@@ -27,3 +28,14 @@ document.addEventListener("keydown", e => {
             break
     }
 })
+
+// theater
+theaterBtn.addEventListener("click", () => {
+    if (videoContainer.classList.contains("theater")){
+        videoContainer.classList.remove("theater")
+    } else {
+        videoContainer.classList.add("theater")
+    }
+})
+
+// fullscreen 
