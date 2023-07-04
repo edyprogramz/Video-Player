@@ -25,3 +25,24 @@
     align-items: center;
     padding: 10px;
 }
+.close{
+    color: blue;
+}
+.video-container.paused .play-btn{
+    display: none;
+}
+.video-container:not(.paused) .pause-btn{
+    display: none;
+}
+.video-container.theater .theater{
+    display: none;
+}
+.video-container:not(.theater) .theater-close{
+    display: none;
+}
+.video-container.full-screen .full-screen{
+    display: none;
+}
+.video-container:not(.full-screen) .full-screen-close{
+    display: none;
+}
