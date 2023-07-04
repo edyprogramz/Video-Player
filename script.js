@@ -26,16 +26,21 @@ document.addEventListener("keydown", e => {
         case "p":
             togglePlayPause()
             break
+        case "t":
+            theaterMode()
+            break
     }
 })
 
 // theater
-theaterBtn.addEventListener("click", () => {
+theaterBtn.addEventListener("click", theaterMode)
+
+function theaterMode () {
     if (videoContainer.classList.contains("theater")){
         videoContainer.classList.remove("theater")
     } else {
         videoContainer.classList.add("theater")
     }
-})
+}
 
 // fullscreen 
