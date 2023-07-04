@@ -3,6 +3,7 @@ const videoContainer = document.querySelector(".video-container");
 
 const playPauseBtn = document.querySelector(".play-pause-btn");
 const theaterBtn = document.querySelector(".theater-btn");
+const fullScreenBtn = document.querySelector(".full-screen-btn");
 
 // play/ pause 
 playPauseBtn.addEventListener("click", togglePlayPause);
@@ -29,6 +30,9 @@ document.addEventListener("keydown", e => {
         case "t":
             theaterMode()
             break
+        case "f":
+            fullscreenMode()
+            break
     }
 })
 
@@ -44,3 +48,16 @@ function theaterMode () {
 }
 
 // fullscreen 
+fullScreenBtn.addEventListener("click", fullscreenMode)
+
+function fullscreenMode (){
+    if (document.fullscreenElement == null){
+        videoContainer.requestFullscreen()
+    } else {
+        document.exitFullscreen()
+    }
+}
+
+document.addEventListener("fullscreenchange", () => {
+    videoContainer.classList.toggle("full-screen")
+})

@@ -1,2 +1,4 @@
 ## video-player commands
-- play/pause: spacebar
+- play/pause: spacebar, "p"
+- theater mode: "t"
+- fullscreen: "f"
