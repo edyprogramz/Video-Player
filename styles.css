@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.video-container{
+    border: 2px solid black;
+    width: 90%;
+    max-width: 1000px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+}
+.video-container video{
+    width: 100%;
+}
